@@ -30,3 +30,7 @@ export const atualizar = async (url: string, dados: Object, setDados: Function, 
 export const deletar = async (url: string, header: Object) => {
     await api.delete(url, header)
 }
+export const consultar = async (url: string, setDados: Function) => {
+    const resposta = await api.get(url);
+    setDados(resposta.data);
+};
